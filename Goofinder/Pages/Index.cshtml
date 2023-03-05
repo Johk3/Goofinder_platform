@@ -1,0 +1,46 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container mt-5">
+	<h1 class="text-center mb-4">Custom Scraper</h1>
+	<div class="row">
+		<div class="col-md-6">
+			<label for="links">Links:</label>
+			<textarea placeholder="Paste all links from which to scrape from, each separated by a new line." class="form-control" id="links" rows="8"></textarea>
+		</div>
+		<div class="col-md-6">
+			<label for="regex">Regex Parameters:</label>
+			<textarea placeholder="Paste your custom regex parameters, each separated by a new line." class="form-control" id="regex" rows="4"></textarea>
+		</div>
+	</div>
+	<div class="row mt-4">
+		<div class="col-md-12">
+			<button class="btn btn-primary" onclick="parseLinks()">Submit</button>
+		</div>
+	</div>
+	<div class="row mt-4">
+		<div class="col-md-12">
+			<label for="result">Result:</label>
+			<textarea class="form-control" id="result" rows="8" readonly></textarea>
+		</div>
+	</div>
+</div>
+	
+<!-- jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	
+<script>
+	function parseLinks() {
+		// Get the links and regex parameters from the textareas
+		var links = $('#links').val();
+		var regex = $('#regex').val();
+			
+		// Here you can add your code to parse the links using the regex parameters
+		// For now, we will just display some dummy text
+		$('#result').val('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan euismod tortor, vel euismod neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce vel odio mauris. Nulla facilisi. Integer vel enim in lorem faucibus tempor. Donec consequat, libero a eleifend porttitor, leo nulla pharetra ipsum, ut tristique enim elit in elit. Proin vel ligula at mauris vestibulum blandit ut id enim. Etiam eget blandit risus. Praesent pulvinar mauris ut diam consectetur, ac congue lectus maximus.');
+	}
+</script>
